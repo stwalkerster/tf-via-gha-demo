@@ -8,7 +8,7 @@ on:
 
 permissions:
   contents: read
-  id-token: write
+  id-token: write # required for AWS OIDC
   issues: write
 
 jobs:
@@ -32,5 +32,12 @@ jobs:
           aws-region: eu-west-1
           role-to-assume: arn:aws:iam::265088867231:role/github/tf-via-github-demo
 
+      - name: Terraform init and validate
+        run: |
+          terraform init -backend-config="key=terraform.tfstate" -backend-config="bucket=stwalkerster-265088867231-demo-tfstate" -backend-config="dynamodb_table=stwalkerster-265088867231-demo-tfstatelock"
 
+      - name: Terraform validate
+        run: terraform validate
 
+      - name: Terraform plan
+        run: terraform plan
