@@ -11,7 +11,7 @@ permissions:
   issues: write
 
 jobs:
-  apply:
+  plan:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Git Repository
@@ -45,6 +45,7 @@ jobs:
       - name: Update Pull Request
         uses: actions/github-script@v7
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const output = `#### Terraform Plan
             <details><summary>Show Plan</summary>
