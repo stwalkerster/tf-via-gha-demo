@@ -23,8 +23,8 @@ resource "aws_s3_bucket" "github_test_bucket" {
 }
 
 
-# resource "aws_s3_object" "test" {
-#     bucket = aws_s3_bucket.github_test_bucket.bucket
-#     key = "test1"
-#     content = "test1"
-# }
+resource "aws_s3_object" "test" {
+    bucket = aws_s3_bucket.github_test_bucket.bucket
+    key = "test1"
+    content = "test1"
+}
