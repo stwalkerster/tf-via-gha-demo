@@ -26,7 +26,7 @@ jobs:
           terraform_version: 1.5
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v3
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: eu-west-1
           role-to-assume: arn:aws:iam::265088867231:role/github/tf-via-github-demo
