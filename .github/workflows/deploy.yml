@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy to Production
 
 on:
   push:
@@ -12,6 +12,7 @@ permissions:
 
 jobs:
   apply:
+    environment: Production
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Git Repository
