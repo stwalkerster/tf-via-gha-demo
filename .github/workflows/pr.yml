@@ -30,7 +30,7 @@ jobs:
           aws-region: eu-west-1
           role-to-assume: arn:aws:iam::265088867231:role/github/tf-via-github-demo
 
-      - name: Terraform init and validate
+      - name: Terraform init
         run: |
           terraform init -backend-config="key=terraform.tfstate" -backend-config="bucket=stwalkerster-265088867231-demo-tfstate" -backend-config="dynamodb_table=stwalkerster-265088867231-demo-tfstatelock"
 
