@@ -18,9 +18,9 @@ provider "aws" {
 data "aws_caller_identity" "this" {}
 
 
-# resource "aws_s3_bucket" "github_test_bucket" {
-#   bucket = "stwalkerster-${data.aws_caller_identity.this.account_id}-github-test-bucket"
-# }
+resource "aws_s3_bucket" "github_test_bucket" {
+  bucket = "stwalkerster-${data.aws_caller_identity.this.account_id}-github-test-bucket"
+}
 
 
 # resource "aws_s3_object" "test" {
